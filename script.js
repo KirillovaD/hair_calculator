@@ -19,20 +19,18 @@ form.addEventListener('submit', function(event){
     const hairMaster = [1, 1.5 , 1.75];
     const stylist = [1.5, 1.75, 2];
     const topStylist = [1.75, 2, 2.25]
-    let lengthPrice = 1; 
-
-    for(let i = 0; i < masters.length; i++){
-      if (masters.value === 0){
-        lengthPrice = hairMaster[lenghts.value]
-      } else if (masters.value === 1){
-        lengthPrice = stylist[lenghts.value]
-      } else if (masters.value === 2){
-        lengthPrice = topStylist[lenghts.value]
-      }
-      return lengthPrice;
+    let lengthPrice;
+    if (Number(masters.value) === 0){
+      lengthPrice = hairMaster[lenghts.value]
+    } else if (Number(masters.value) === 1){
+      lengthPrice = stylist[lenghts.value]
+    } else if (Number(masters.value) === 2){
+      lengthPrice = topStylist[lenghts.value]
     }
-    sum = sum * lengthPrice;
 
+      
+
+    sum = sum * lengthPrice
   }
 
 
